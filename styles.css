@@ -1,18 +1,180 @@
+/* Estilos para la barra de navegación */
 .navbar {
-    overflow: hidden;
-    background-color: #333;
+    background-color: #f5faf9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    position: fixed; /* Agrega posición fija */
+    top: 0; /* Ancla la barra de navegación en la parte superior */
+    left: 0;
+    right: 0; /* Ancla la barra de navegación en la parte derecha */
+    z-index: 1000; /* Asegura que la barra de navegación esté en la parte superior */
+    box-shadow: 2px 10px 20px rgba(9, 13, 232, 0.1); /* Agrega una sombra sutíl */
 }
 
-.navbar a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
+/* Estilos para los botones de navegación */
+.navbar-buttons {
+    display: flex;
+    gap: 20px;
+    margin-right: 40px; /* Ajusta el margen derecho para evitar superposición con el logo */
+}
+
+.navbar-buttons a {
+    color: #07023878;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Comic Sans MS', cursive;
+    padding: 5px 15px;
+    background-color: #a1f5f3e2;
+    border: 1px solid #07023878;
+    border-radius: 5px;
 }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
+.navbar-buttons a:hover {
+    background-color: #07023878;
+    color: rgba(0, 0, 0, 0.729);
+    border: 1px solid #a1f5f3e2;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 300px;
+    margin: 10px 10px 10px 100px;
+}
+
+/* Estilos para el título */
+.title {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-top: 150px; /* Ajusta la altura de la barra de navegación */
+    margin-bottom: 30px; /* Agrega margen inferior para separación */
+}
+
+.title h1 {
+    font-size: 24px; /* Tamaño de fuente personalizado */
+}
+
+/* SECCION CONTACTANOS */
+/* Agrega estilos para el contenedor principal */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Estilos para el mapa */
+.map {
+    flex: 1; /* El mapa ocupará el espacio disponible en la izquierda */
+    margin-right: 20px; /* Espacio entre el mapa y el formulario */
+}
+
+.map iframe {
+    width: 100%;
+    height: 400px;
+}
+
+/* Estilos para la información de contacto */
+.contact-info {
+    flex: 1; /* La información de contacto ocupará el espacio disponible en la derecha */
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    flex: 1; /* El formulario de contacto ocupará el espacio disponible en la derecha */
+}
+
+.contact-form h1 {
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+}
+
+/* Estilos para el icono de WhatsApp */
+.bi-whatsapp{
+   color: rgb(4, 158, 4); 
+}
+
+
+/*PRODUCTOS DE LIMPIEZA*/
+.contenedor-tarjetas{
+    margin: 30px 30px 30px 30px  ;
+}
+.tarjetas {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.tarjeta {
+    width: calc(33.33% - 20px); /* Ajusta el ancho de cada tarjeta según tu diseño */
+    margin-bottom: 20px;
+    perspective: 1000px; /* Establece la perspectiva para el efecto de volteo */
+    cursor: pointer;
+    position: relative; /* Agrega posición relativa */
+}
+
+.cara {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.frontal {
+    background-color: #f5faf9;
+}
+.frontal img {
+    align-self: center; /* Centra la imagen en la cara frontal */
+}
+.trasera {
+    background-color: #fff;
+    transform: rotateY(180deg); /* Inicialmente, oculta la cara trasera */
+}
+
+.boton-compra {
+    background-color: #0370e478;
+    color: #ffffff;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute; /* Agrega posición absoluta */
+    bottom: 10px; /* Ajusta la posición vertical del botón */
+    left: 50%; /* Centra horizontalmente el botón */
+    transform: translateX(-50%); /* Centra horizontalmente el botón */
+}
+
+.tarjeta:hover .cara {
+    transform: rotateY(180deg); /* Voltea la tarjeta al pasar el cursor por encima */
 }

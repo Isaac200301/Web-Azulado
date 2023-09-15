@@ -136,8 +136,8 @@
 }
 
 .cara {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     position: relative;
     backface-visibility: hidden;
     transition: transform 0.5s;
@@ -158,7 +158,7 @@
     align-self: center; /* Centra la imagen en la cara frontal */
 }
 .trasera {
-    background-color: #fff;
+    background-color: #44a2ae;
     transform: rotateY(180deg); /* Inicialmente, oculta la cara trasera */
 }
 

@@ -14,13 +14,13 @@
 }
 
 /* Estilos para los botones de navegación */
-.navbar-buttons {
+.buttons {
     display: flex;
     gap: 20px;
     margin-right: 40px; /* Ajusta el margen derecho para evitar superposición con el logo */
 }
 
-.navbar-buttons a {
+.buttons a {
     color: #07023878;
     text-align: center;
     text-decoration: none;

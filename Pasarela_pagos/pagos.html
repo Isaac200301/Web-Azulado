@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasarela de Pagos - Azulado Isaac</title>
+    <!-- Agregamos Bootstrap para los estilos y los íconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="pasarela-pagos.css">
+</head>
+<body>
+    <section class="pasarela-container">
+        <h2>Detalles del Pedido</h2>
+        <form id="formulario-pago">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="tarjeta">Número de Tarjeta:</label>
+            <div class="input-group">
+                <input type="text" id="tarjeta" name="tarjeta" class="form-control" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="expiry-cvv">
+                <div>
+                    <label for="expiry">Fecha de Expiración:</label>
+                    <input type="text" id="expiry" name="expiry" class="form-control" required>
+                </div>
+                <div>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="button" id="boton-visa" class="btn btn-primary" onclick="realizarCompra()">
+                Pagar con Visa
+            </button>
+            <button type="button" id="boton-mastercard" class="btn btn-info" onclick="realizarCompra()">
+                Pagar con Mastercard
+            </button>
+            <button type="button" id="boton-paypal" class="btn btn-success" onclick="realizarCompra()">
+                Pagar con PayPal
+            </button>
+        </form>
+    </section>
+
+    <!-- Agregamos Bootstrap JS para los estilos interactivos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

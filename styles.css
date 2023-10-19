@@ -1,6 +1,6 @@
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #f5faf9;
+    background-color: #c6d9ff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,9 +45,11 @@
 
 /* Estilos para el título */
 .title {
-    text-align: center; /* Centra el contenido horizontalmente */
-    margin-top: 150px; /* Ajusta la altura de la barra de navegación */
-    margin-bottom: 30px; /* Agrega margen inferior para separación */
+    grid-template-columns: 1/4;
+    grid-template-rows: 1/1;
+    text-align: center; 
+    margin-top: 150px; 
+    margin-bottom: 30px; 
 }
 
 .title h1 {
@@ -111,25 +113,28 @@
 
 /* Estilos para el icono de WhatsApp */
 .bi-whatsapp{
-   color: rgb(4, 158, 4); 
+    color: rgb(4, 158, 4); 
 }
 
 
 /*PRODUCTOS DE LIMPIEZA*/
 .contenedor-tarjetas{
-    margin: 30px 30px 30px 30px  ;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
 }
 .tarjetas {
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
+    display: grid;
+    width: 100%;
+    margin:auto;
+    background-color: aliceblue;
+    grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
+    grid-template-rows: auto, 1fr;
 }
 
 .tarjeta {
-    width: calc(33.33% - 20px); /* Ajusta el ancho de cada tarjeta según tu diseño */
-    margin-bottom: 20px;
+    margin: 20px;
     perspective: 1000px; /* Establece la perspectiva para el efecto de volteo */
     cursor: pointer;
     position: relative; /* Agrega posición relativa */
@@ -166,7 +171,7 @@
     background-color: #0370e478;
     color: #ffffff;
     border: none;
-    padding: 20px 30px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -176,6 +181,107 @@
     transform: translateX(-50%); /* Centra horizontalmente el botón */
 }
 
+.boton-compra:hover {
+    background-color: #025a9e; /* Cambia el color al pasar el ratón */
+}
+
+
 .tarjeta:hover .cara {
     transform: rotateY(180deg); /* Voltea la tarjeta al pasar el cursor por encima */
+}
+
+/*RESPONSIVE
+/* Estilos para la barra de navegación en dispositivos más pequeños */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+        position: relative;
+        z-index: 9; /* Asegura que la barra de navegación esté en la parte superior */
+    }
+
+    #menu-toggle {
+        display: none; /* Oculta el checkbox por defecto en pantallas más grandes */
+    }
+
+    .icon {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .navbar-buttons {
+        flex-direction: column;
+        margin-right: 0;
+        text-align: center;
+        position: absolute;
+        top: 100%; /* Coloca el menú debajo de la barra de navegación */
+        left: 0;
+        width: 100%;
+        background-color: #f5faf9; /* Ajusta el color de fondo según sea necesario */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        display: none; /* Inicialmente oculta el menú */
+        z-index: 8; /* Asegura que el menú esté sobre la barra de navegación */
+    }
+
+    /* Mostrar el icono solo cuando el menú está oculto */
+    #menu-toggle:not(:checked) + .icon {
+        display: block;
+    }
+
+    /* Mostrar el menú solo cuando el checkbox está marcado */
+    #menu-toggle:checked + .navbar-buttons {
+        display: flex;
+    }
+
+    .navbar-buttons a {
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        width: 200px;
+        margin: 10px auto; /* Centra el logo en dispositivos más pequeños */
+    }
+}
+
+/* Ajustes para pantallas más grandes */
+@media only screen and (min-width: 769px) {
+    .navbar-buttons {
+        display: flex;
+        position: static; /* Restaura la posición estática en pantallas más grandes */
+    }
+    #menu-toggle {
+        display: none; /* Oculta el checkbox por defecto en pantallas más grandes */
+    }
+    .icon {
+        display: none; /* Oculta el icono en pantallas más grandes */
+    }
+}
+
+
+/* Estilos para la sección de contacto en dispositivos más pequeños */
+@media only screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map,
+    .contact-info,
+    .contact-form {
+        width: 100%; /* Ocupa todo el ancho en dispositivos más pequeños */
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-bottom: 20px;
+    }
+}
+/*DEPRONTO*/
+.cara figcaption {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.cara .trasera figcaption {
+    color: #ffffff; /* Cambia el color del texto en la parte trasera */
 }

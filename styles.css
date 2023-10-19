@@ -14,13 +14,13 @@
 }
 
 /* Estilos para los botones de navegación */
-.buttons {
+.navbar-buttons {
     display: flex;
     gap: 20px;
     margin-right: 40px; /* Ajusta el margen derecho para evitar superposición con el logo */
 }
 
-.buttons a {
+.navbar-buttons a {
     color: #07023878;
     text-align: center;
     text-decoration: none;
@@ -138,6 +138,7 @@
     perspective: 1000px; /* Establece la perspectiva para el efecto de volteo */
     cursor: pointer;
     position: relative; /* Agrega posición relativa */
+
 }
 
 .cara {
@@ -172,7 +173,8 @@
     color: #ffffff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin: 10px;
     cursor: pointer;
     font-weight: bold;
     position: absolute; /* Agrega posición absoluta */

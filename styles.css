@@ -1,6 +1,11 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+    font: size 2px;;
+    text-wrap: balance;
+}
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #c6d9ff;
+    background-color: aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,31 +21,51 @@
 /* Estilos para los botones de navegación */
 .navbar-buttons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-right: 40px; /* Ajusta el margen derecho para evitar superposición con el logo */
 }
 
 .navbar-buttons a {
-    color: #07023878;
+    color: rgb(0, 94, 255);
     text-align: center;
     text-decoration: none;
-    font-family: 'Comic Sans MS', cursive;
-    padding: 5px 15px;
-    background-color: #a1f5f3e2;
-    border: 1px solid #07023878;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 25px;
     border-radius: 5px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .navbar-buttons a:hover {
-    background-color: #07023878;
-    color: rgba(0, 0, 0, 0.729);
-    border: 1px solid #a1f5f3e2;
+    color: #fff;/* color de fuente hover */
 }
-
+.navbar-buttons a::after {
+    content: "";
+    background: #4741d7; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+}
+.navbar-buttons a:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
+}
 /* Estilos para el logo */
 .logo img {
     width: 300px;
     margin: 10px 10px 10px 100px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
 }
 
 /* Estilos para el título */
@@ -121,20 +146,20 @@
 .contenedor-tarjetas{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
 
 }
 .tarjetas {
     display: grid;
-    width: 100%;
-    margin:auto;
+    padding: 1rem;
+    margin:1rem;
     background-color: aliceblue;
     grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
-    grid-template-rows: auto, 1fr;
+    grid-template-rows: 1fr, 1fr;
 }
 
 .tarjeta {
-    margin: 20px;
+    margin-right: 20px;
     perspective: 1000px; /* Establece la perspectiva para el efecto de volteo */
     cursor: pointer;
     position: relative; /* Agrega posición relativa */
@@ -143,7 +168,7 @@
 
 .cara {
     width: 90%;
-    height: 90%;
+    height: 80%;
     position: relative;
     backface-visibility: hidden;
     transition: transform 0.5s;
@@ -158,10 +183,12 @@
 }
 
 .frontal {
-    background-color: #f5faf9;
+    background-color: #ffffff;
 }
 .frontal img {
     align-self: center; /* Centra la imagen en la cara frontal */
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
 }
 .trasera {
     background-color: #44a2ae;
@@ -178,7 +205,7 @@
     cursor: pointer;
     font-weight: bold;
     position: absolute; /* Agrega posición absoluta */
-    bottom: 10px; /* Ajusta la posición vertical del botón */
+    bottom: 15%; /* Ajusta la posición vertical del botón */
     left: 50%; /* Centra horizontalmente el botón */
     transform: translateX(-50%); /* Centra horizontalmente el botón */
 }

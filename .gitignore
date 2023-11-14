@@ -1,5 +1,14 @@
-python\datos_compra.json
-python\Lista_Precios_Min_2023-1.pdf
-python\Productos de Limpieza 2023 - 35.pdf
-python\productos.json
-python\tamanos.json
+# Ignorar todos los archivos .pyc
+*.pyc
+
+# Ignorar el directorio python y sus contenidos
+python/
+
+# Ignorar los archivos json específicos
+datos_compra.json
+productos.json
+tamanos.json
+
+# Ignorar archivos PDF específicos
+Lista_Precios_Min_2023-1.pdf
+Productos de Limpieza 2023 - 35.pdf

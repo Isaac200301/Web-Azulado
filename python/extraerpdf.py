@@ -5,7 +5,6 @@ from unidecode import unidecode
 
 # Ruta al archivo PDF
 pdf_path_compra = "python/Lista_Precios_Min_2023-1.pdf"
-pdf_path_venta = "python/Productos de Limpieza 2023 - 35.pdf"
 
 # Extraer datos de la tabla
 def extraer_datos(pdf_path):

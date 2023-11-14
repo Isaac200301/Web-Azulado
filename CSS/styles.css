@@ -8,15 +8,13 @@
 /* Estilos para la barra de navegación */
 .navbar {
     background-color: aliceblue;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
-    position: fixed; /* Agrega posición fija */
-    top: 0; /* Ancla la barra de navegación en la parte superior */
-    left: 0;
-    right: 0; /* Ancla la barra de navegación en la parte derecha */
-    z-index: 1000; /* Asegura que la barra de navegación esté en la parte superior */
+    position: fixed;
+    top: 0; /* Agrega posición fija */
+
+
     box-shadow: 2px 10px 20px rgba(9, 13, 232, 0.1); /* Agrega una sombra sutíl */
 }
 
@@ -166,16 +164,17 @@
     padding: 1rem;
     margin:1rem;
     background-color: aliceblue;
-    grid-template-columns: repeat(auto-fill, minmax(15rem,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(22rem,1fr));
     justify-content: center;
 }
 
 .tarjeta {
     justify-content: center;
-    margin: 30px;
-    perspective: 1000px; /* Establece la perspectiva para el efecto de volteo */
+    margin: 20px;
+    perspective: 100000px; /* Establece la perspectiva para el efecto de volteo */
     cursor: pointer;
     position: relative; /* Agrega posición relativa */
+    height: 35rem;
 
 }
 
@@ -198,10 +197,17 @@
     background-color: #ffffff;
     justify-content: space-between;
 }
+.frontal p{
+    margin: 10px;
+    position: static; 
+}
 .frontal img {
-    align-self: center; /* Centra la imagen en la cara frontal */
+    align-self: center;
+    width: auto;
+    height: 13rem;
     filter: brightness(1.1);
     mix-blend-mode: multiply;
+    margin-bottom: 2rem;
 }
 .Imagen{
     position: absolute;
@@ -227,14 +233,14 @@
     background-color: #0370e478;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 10px 30px;
+    border-radius: 20px;
     margin: auto;
     cursor: pointer;
     font-weight: bold;
-    position: relative; /* Agrega posición absoluta */
-    bottom: 15%; /* Ajusta la posición vertical del botón */
-    left: 50%; /* Centra horizontalmente el botón */
+    position: absolute; /* Agrega posición absoluta */
+    bottom: 7%; /* Ajusta la posición vertical del botón */
+    left: 45%; /* Centra horizontalmente el botón */
     transform: translateX(-50%); /* Centra horizontalmente el botón */
 }
 

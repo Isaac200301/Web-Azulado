@@ -1,8 +1,3 @@
-# Ignorar todos los archivos .pyc
-*.pyc
-
-# Ignorar el directorio python y sus contenidos
-python/
 
 # Ignorar los archivos json específicos
 datos_compra.json

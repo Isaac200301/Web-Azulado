@@ -1,38 +1,62 @@
 *{
     font-family: 'Playfair Display', serif;
-    font: size 2px;;
     text-wrap: balance;
     margin: 0;
     padding: 0;
 }
+.contenedor-quienes{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    height: 500px;
+    background: linear-gradient(rgb(255, 255, 255), #bfe8e7);
+}
+.container {
+    position: relative;
+    background-image: url('/Imagenes/Piso.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+}
+
+.product {
+    position: absolute;
+    width: 600px;
+    height: auto;
+}
+
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: aliceblue;
+    background-color: #bfe8e7;
     justify-content: space-between;
+    width: 100%;
+    height: 110px;
     align-items: center;
-    padding: 0px 40px;
-    position: fixed;
-    top: 0; /* Agrega posición fija */
-
-
-    box-shadow: 2px 10px 20px rgba(9, 13, 232, 0.1); /* Agrega una sombra sutíl */
+    box-shadow: 2px 10px 20px rgba(9, 13, 232, 0.3);
+    z-index: 10000;
 }
+.navbar-transparente {
+    background-color: rgba(255, 255, 255, 0.8); /* Ajusta el valor alpha para la transparencia */
+    transition: background-color 0.5s ease-in-out; /* Añade una transición suave */
+  }
+  
 
 /* Estilos para los botones de navegación */
 .navbar-buttons {
     display: flex;
     gap: 10px;
-    margin-right: 40px; /* Ajusta el margen derecho para evitar superposición con el logo */
+    margin-right: 40px;
+    height: 80%; /* Ajusta el margen derecho para evitar superposición con el logo */
 }
 
 .navbar-buttons a {
     color: rgb(0, 94, 255);
     text-align: center;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     padding: 15px 25px;
-    border-radius: 5px;
+    border-radius: 17px;
     z-index: 1;
     position: relative;
     overflow: hidden;
@@ -67,24 +91,13 @@
     filter: brightness(1.1);
     mix-blend-mode: multiply;
 }
-.contenedor-quienes{
-    display: grid;
-    width: 90%;
-    height: 800px;
-    background-image: url(../Imagenes/_45048c45-1f12-4c2a-9b77-d95f95357dc9.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin: 150px 20px 10px 30px;
-
-}
 /* Estilos para el título */
 .title {
+    background-color: #D9F1F1;
     grid-template-columns: 1/4;
     grid-template-rows: 1/1;
     text-align: center; 
-    margin-top: 90px; 
-    margin-bottom: 30px; 
+    height: 100px;
 }
 
 .title h1 {
@@ -161,16 +174,18 @@
 }
 .tarjetas {
     display: grid;
-    padding: 1rem;
-    margin:1rem;
-    background-color: aliceblue;
-    grid-template-columns: repeat(auto-fill, minmax(22rem,1fr));
+    place-items: center;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    background-color: #D9F1F1;
+    grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
     justify-content: center;
 }
 
 .tarjeta {
     justify-content: center;
-    margin: 20px;
+    margin-left: 10px ;
+    margin-top: 30px;
     perspective: 100000px; /* Establece la perspectiva para el efecto de volteo */
     cursor: pointer;
     position: relative; /* Agrega posición relativa */
@@ -189,7 +204,7 @@
     text-align: center;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 30px;
 }
 
 .frontal {
@@ -224,7 +239,9 @@
     top: 0;
     left:0;
     position: absolute;
-    background-color: #d6e9eb;
+    background-image: url(../Imagenes/Imagen\ de\ WhatsApp\ 2023-11-16\ a\ las\ 01.50.42_b8feb0b5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: space-around;
     transform: perspective(600px) rotateY(180deg); /* Inicialmente, oculta la cara trasera */
 }
@@ -261,7 +278,7 @@
 @media only screen and (max-width: 768px) {
     .navbar {
         padding: 10px;
-        position: relative;
+        position: fixed;
         z-index: 9; /* Asegura que la barra de navegación esté en la parte superior */
     }
 

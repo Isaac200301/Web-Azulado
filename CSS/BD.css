@@ -1,0 +1,31 @@
+body {
+    background-image: url(../Imagenes/basedatos.jpeg);
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+.navbar{
+    height: 100px;
+}
+.navbar-transparente {
+    transition: background-color 0.5s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.logo {
+    width: 150px; /* Ajusta el ancho según tus preferencias */
+    height: auto; /* Mantiene la proporción original */
+    margin: 10px 10px 10px 100px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+.tittle{
+    padding-top: 100px;
+}
+.buscar{
+    margin-right: 120px;
+    margin-left: 200px;
+}
+.boton-buscar{
+    width: 350px;
+}

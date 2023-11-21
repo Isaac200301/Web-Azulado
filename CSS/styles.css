@@ -5,24 +5,25 @@
     padding: 0;
 }
 .contenedor-quienes{
-    height: 100vh;
     display: grid;
+    margin-top: 100px;
     grid-template-rows: 70% 30%;
-    height: 500px;
-    background: linear-gradient(rgb(255, 255, 255), #bfe8e7);
+    height: 600px;
+    background: linear-gradient(rgb(255, 255, 255), #aad8d8);
 }
 .container {
-    position: relative;
-    background-image: url('/Imagenes/Piso.jpg');
+    position:relative;
+    background-image: url('../Imagenes/Piso.jpg');
     background-size: cover;
-    width: 100%;
-    height: 150px;
 }
 
 .product {
     position: absolute;
     width: 600px;
     height: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 /* Estilos para la barra de navegación */
@@ -36,8 +37,8 @@
     z-index: 10000;
 }
 .navbar-transparente {
-    background-color: rgba(255, 255, 255, 0.8); /* Ajusta el valor alpha para la transparencia */
-    transition: background-color 0.5s ease-in-out; /* Añade una transición suave */
+    background-color: rgba(255, 255, 255, 0.8); 
+    transition: background-color 0.5s ease-in-out; 
   }
   
 
@@ -46,7 +47,7 @@
     display: flex;
     gap: 10px;
     margin-right: 40px;
-    height: 80%; /* Ajusta el margen derecho para evitar superposición con el logo */
+    height: 80%; 
 }
 
 .navbar-buttons a {
@@ -64,11 +65,11 @@
 }
 
 .navbar-buttons a:hover {
-    color: #fff;/* color de fuente hover */
+    color: #fff;
 }
 .navbar-buttons a::after {
     content: "";
-    background: #4741d7; /* color de fondo hover */
+    background: #4741d7; 
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -117,7 +118,7 @@
 /* Estilos para el mapa */
 .map {
     flex: 1; /* El mapa ocupará el espacio disponible en la izquierda */
-    margin-left: 30px; /* Espacio entre el mapa y el formulario */
+    margin-left: 30px; 
 }
 
 .map iframe {
@@ -255,14 +256,14 @@
     margin: auto;
     cursor: pointer;
     font-weight: bold;
-    position: absolute; /* Agrega posición absoluta */
-    bottom: 7%; /* Ajusta la posición vertical del botón */
-    left: 45%; /* Centra horizontalmente el botón */
-    transform: translateX(-50%); /* Centra horizontalmente el botón */
+    position: absolute; 
+    bottom: 7%; 
+    left: 45%; 
+    transform: translateX(-50%); 
 }
 
 .boton-compra:hover {
-    background-color: #025a9e; /* Cambia el color al pasar el ratón */
+    background-color: #025a9e; 
 }
 
 .tarjeta:hover .trasera {
@@ -270,7 +271,73 @@
 }
 
 .tarjeta:hover .frontal {
-    transform: perspective(600px) rotateY(180deg); /* Voltea la tarjeta al pasar el cursor por encima */
+    transform: perspective(600px) rotateY(180deg); 
+}
+.bubble-large, .bubble-small {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.bubble-large {
+    fill: #87CEEB; 
+    filter: drop-shadow(0 0 10px rgba(0, 128, 255, 0.7)); 
+    animation: up-large 8s infinite;
+}
+
+.bubble-large circle {
+    animation: wobble-large 4s infinite ease-in-out;
+}
+
+.bubble-small circle {
+    fill: #87CEEB; 
+    filter: drop-shadow(0 0 5px rgba(0, 128, 255, 0.5)); 
+    animation: wobble-small 4s 275ms infinite ease-in-out;
+}
+
+.bubble-small {
+    animation: up-small 10s 900ms infinite;
+}
+
+@keyframes up-large {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px);
+    }
+}
+
+@keyframes up-small {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px);
+    }
+}
+
+@keyframes wobble-large {
+    33% {
+        transform: translateX(-30px) translateY(-10px);
+    }
+    66% {
+        transform: translateX(30px) translateY(10px);
+    }
+}
+
+@keyframes wobble-small {
+    33% {
+        transform: translateX(-15px) translateY(-5px);
+    }
+    66% {
+        transform: translateX(15px) translateY(5px);
+    }
 }
 
 /*RESPONSIVE
@@ -279,11 +346,11 @@
     .navbar {
         padding: 10px;
         position: fixed;
-        z-index: 9; /* Asegura que la barra de navegación esté en la parte superior */
+        z-index: 9; 
     }
 
     #menu-toggle {
-        display: none; /* Oculta el checkbox por defecto en pantallas más grandes */
+        display: none;
     }
 
     .icon {
@@ -300,13 +367,13 @@
         margin-right: 0;
         text-align: center;
         position: absolute;
-        top: 100%; /* Coloca el menú debajo de la barra de navegación */
+        top: 100%; 
         left: 0;
         width: 100%;
-        background-color: #f5faf9; /* Ajusta el color de fondo según sea necesario */
+        background-color: #f5faf9; 
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        display: none; /* Inicialmente oculta el menú */
-        z-index: 8; /* Asegura que el menú esté sobre la barra de navegación */
+        display: none; 
+        z-index: 8; 
     }
 
     /* Mostrar el icono solo cuando el menú está oculto */

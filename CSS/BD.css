@@ -3,21 +3,25 @@ body {
     background-repeat: repeat-x;
     background-size: cover;
 }
+
 .navbar{
     height: 100px;
 }
+
 .navbar-transparente {
     transition: background-color 0.5s ease-in-out;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 .logo {
-    width: 150px; /* Ajusta el ancho según tus preferencias */
-    height: auto; /* Mantiene la proporción original */
+    width: 150px; 
+    height: auto; 
     margin: 10px 10px 10px 100px;
     filter: brightness(1.1);
     mix-blend-mode: multiply;
+}
+h1{
+    padding-top: 30px;
 }
 .tittle{
     padding-top: 100px;

@@ -19,7 +19,7 @@ $elementos = $conectar->query("SELECT precios_por_tamano.id,
     <title>Mostrar Elementos</title>
     <link rel="stylesheet" href="../CSS/bootstrap.css">
     <link rel="stylesheet" href="../CSS/BD.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
 </head>
 <header>
@@ -43,18 +43,13 @@ $elementos = $conectar->query("SELECT precios_por_tamano.id,
 </nav>
 </header>
 <body class="row justify-content-center align-items-center">
-    <div class="col-auto container">
-        <h1 class="text-white">Gestión de Elementos</h1>
-
-        <div class="tittle srow">
-            <h2 class="text-black">Lista de Elementos</h2>
-            <!-- Botón para agregar elemento -->
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Elemento</button>
-
-        </div>
+    <div class="col-auto">
+    <div class="element tittle srow">
+    <h1 class="text-black">Lista de Elementos</h1>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Elemento</button>
+    </div>
         <div>
             <table class="table table-white table-striped-columns text-white">
-                <!-- Encabezado de la tabla -->
                 <thead class="table-header">
                     <tr>
                         <th scope="col">ID</th>
@@ -89,8 +84,10 @@ $elementos = $conectar->query("SELECT precios_por_tamano.id,
                             <td><?php echo "$" . number_format($elemento['precio_compra'], 0, ',', '.') ?></td>
                             <td><?php echo "$" . number_format($elemento['precio_venta'], 0, ',', '.') ?></td>
                             <td><?php echo $elemento['stock'] ?></td>
-                            <td><a href="../PHP/editar.php?id=<?php echo $elemento['id'] ?>" class="btn btn-outline-primary">Editar</a></td>
-                            <td><a class="btn btn-outline-danger">Eliminar</a></td>
+                            <td>
+                            <a href="#" class="btn btn-outline-primary editar-btn" data-elemento-id="<?php echo $elemento['id']; ?>">Editar</a>
+                            </button>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -104,7 +101,7 @@ $elementos = $conectar->query("SELECT precios_por_tamano.id,
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -138,11 +135,38 @@ $elementos = $conectar->query("SELECT precios_por_tamano.id,
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="editarModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editarModalLabel">UPDATE</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!--- El resto esta en cargar_contenido_modal.php--->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../JS/bootstrap.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
 <script>
+$(document).ready(function () {
+   $(".editar-btn").on('click', function (e) {
+      e.preventDefault();
+      var elementoId = $(this).data('elemento-id');
+
+      $.ajax({
+         url: '../PHP/cargar_contenido_modal.php?id=' + elementoId,
+         type: 'GET',
+         success: function (data) {
+            $("#editarModal .modal-body").html(data);
+            $("#editarModal").modal('show');
+         }
+      });
+   });
+});
+
 $(document).ready(function() {
   $(window).scroll(function() {
     if ($(this).scrollTop() > 50) { // Cambia 50 por la posición en la que deseas que ocurra el cambio
@@ -173,6 +197,5 @@ $(document).ready(function() {
     });
 });
 </script>
-
 </body>
 </html>

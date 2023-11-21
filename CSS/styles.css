@@ -124,6 +124,7 @@ body{
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
+    background: linear-gradient(#aad8d8,rgb(255, 255, 255));
 }
 
 /* Estilos para el mapa */
@@ -141,7 +142,7 @@ body{
 /* Estilos para la información de contacto */
 .contact-info {
     max-width: 100%;
-    flex: 1; /* La información de contacto ocupará el espacio disponible en la derecha */
+    flex: 1; 
     margin-left: 30px
 }
 
@@ -152,7 +153,7 @@ body{
 
 /* Estilos para el formulario de contacto */
 .contact-form {
-    flex: 1; /* El formulario de contacto ocupará el espacio disponible en la derecha */
+    flex: 1;
 }
 
 .contact-form h1 {
@@ -168,10 +169,12 @@ body{
 .contact-form textarea {
     margin-bottom: 10px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .contact-form button {
     padding: 10px 20px;
+    border-radius: 10px;
 }
 
 /* Estilos para el icono de WhatsApp */
